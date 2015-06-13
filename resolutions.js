@@ -1,10 +1,10 @@
+Resolutions = new Mongo.Collection('resolutions');
+
 if (Meteor.isClient) {
   Template.body.helpers({
-    resolutions: [
-      { title: "Resolution #1" },
-      { title: "Resolution #2" },
-      { title: "Resolution #3" }
-    ]
+    resolutions: function() {
+      return Resolutions.find();
+    }
   });
 }
 
